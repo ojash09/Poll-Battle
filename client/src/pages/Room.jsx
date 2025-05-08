@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
+import './Room.css'; // ⬅️ Make sure to import the CSS file
 
 export default function Room({ roomId, name, socket }) {
   const [votes, setVotes] = useState({});
@@ -29,21 +32,42 @@ export default function Room({ roomId, name, socket }) {
   };
 
   return (
-    <div>
-      <h1>Room ID: {roomId}</h1>
-      <p>Welcome, {name}!</p>
-      <h2>{question}</h2>
-      <p>Time Left: {timer}s</p>
-      {options.map((opt) => (
-        <button key={opt} onClick={() => vote(opt)} disabled={!!voted || votingEnded}>{opt}</button>
-      ))}
-      <div>
-        {options.map((opt) => (
-          <div key={opt}>{opt}: {votes[opt] || 0}</div>
-        ))}
+    <div className="room-container">
+      <div className="room-card">
+        <h1 className="room-title">🗳️ Poll Room</h1>
+        <p className="room-id">Room ID: <strong>{roomId}</strong></p>
+        <p className="welcome-text">Welcome, <strong>{name}</strong>!</p>
+
+        <div className="question-box">
+          <h2 className="question-text">{question || "Waiting for question..."}</h2>
+          <p className="timer">⏳ Time Left: {timer}s</p>
+        </div>
+
+        <div className="vote-buttons">
+          {options.map((opt) => (
+            <button
+              key={opt}
+              onClick={() => vote(opt)}
+              disabled={!!voted || votingEnded}
+              className={`vote-button ${voted || votingEnded ? 'disabled' : ''}`}
+            >
+              {opt}
+            </button>
+          ))}
+        </div>
+
+        <div className="results-box">
+          {options.map((opt) => (
+            <div key={opt} className="result-line">
+              <span>{opt}</span>
+              <span><strong>{votes[opt] || 0}</strong> vote(s)</span>
+            </div>
+          ))}
+        </div>
+
+        {voted && <p className="status voted">✅ You voted for: {voted}</p>}
+        {votingEnded && <p className="status ended">Voting has ended.</p>}
       </div>
-      {voted && <p>You voted for: {voted}</p>}
-      {votingEnded && <p>Voting has ended.</p>}
     </div>
   );
 }

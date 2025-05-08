@@ -1,3 +1,33 @@
+## Installation and Running Guide
+
+Follow the steps below to clone and run the application on your local machine:
+
+### 1. Clone the repository
+
+bash
+git clone https://github.com/AnkitS-21/Poll_Battle
+cd Poll_Battle
+
+
+### 2. Set up the server
+
+bash
+cd server
+npm install
+node index.js
+
+
+### 3. Set up the client
+
+Open a new terminal window/tab:
+
+bash
+cd client
+npm install
+npm start
+
+
+The client will run on http://localhost:3000 and the server on http://localhost:5000 (or as configured).
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

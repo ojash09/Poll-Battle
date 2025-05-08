@@ -1,0 +1,161 @@
+/* Room.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+}
+
+.room-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f6f8;
+  padding: 2rem;
+}
+
+.room-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.room-title {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: #2c3e50;
+}
+
+.room-id,
+.welcome-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.25rem;
+}
+
+.question-box {
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.question-text {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.timer {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.vote-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 1.5rem 0;
+}
+
+.vote-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.05rem;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.vote-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.vote-button:active {
+  transform: translateY(0);
+}
+
+.vote-button.disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.results-box {
+  text-align: left;
+  margin-top: 2rem;
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.result-line {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+}
+
+.status {
+  margin-top: 1.25rem;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.status.voted {
+  color: #166534;
+  background-color: #dcfce7;
+}
+
+.status.ended {
+  color: #991b1b;
+  background-color: #fee2e2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .room-container {
+    padding: 1rem;
+  }
+  
+  .room-card {
+    padding: 1.5rem;
+  }
+  
+  .room-title {
+    font-size: 1.6rem;
+  }
+  
+  .question-text {
+    font-size: 1.1rem;
+  }
+  
+  .vote-button {
+    padding: 0.65rem 1.25rem;
+    font-size: 1rem;
+  }
+}
