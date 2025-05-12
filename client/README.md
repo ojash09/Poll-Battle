@@ -1,100 +1,72 @@
-## Installation and Running Guide
+# 🗳️ Poll Battle
 
-Follow the steps below to clone and run the application on your local machine:
+**Poll Battle** is a real-time polling application built with **React** and **WebSocket**, allowing users to create and join rooms to vote on questions live.
 
-### 1. Clone the repository
+## 🚀 Setup Instructions
 
-bash
+Follow these steps to run the app locally:
+
+### 1. Clone the Repository
+
 git clone https://github.com/ojash09/Poll_Battle
 cd Poll_Battle
 
+### 2. Start the WebSocket Server
 
-### 2. Set up the server
-
-bash
 cd server
 npm install
 node index.js
+Server runs at ws://localhost:8080
 
+### 3. Start the React Client
 
-### 3. Set up the client
-
-Open a new terminal window/tab:
-
-bash
+Open a new terminal:
 cd client
 npm install
 npm start
+Client runs at http://localhost:3000
 
+### ✨ Features
+✅ Create unique poll rooms with custom questions and options
 
-The client will run on http://localhost:3000 and the server on http://localhost:5000 (or as configured).
-# Getting Started with Create React App
+🧑‍🤝‍🧑 Real-time user join updates
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📊 Live vote tracking with instant updates
 
-## Available Scripts
+⏱️ 60-second countdown timer for each room
 
-In the project directory, you can run:
+🛡️ Prevents duplicate voting from the same user
 
-### `npm start`
+🧠 Architecture: Vote State & Room Management
+Room and vote states are entirely managed on the WebSocket server. When a room is created:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A unique 6-character room ID is generated
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The question, options, vote counts, and timer are stored
 
-### `npm test`
+Each user is assigned a name and added to a users list
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A 60-second countdown starts on first user join
 
-### `npm run build`
+Each vote is validated and then broadcasted to all users in the room via VOTE_UPDATE. The server ensures:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+One user = one vote
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Real-time synchronization across all clients
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Voting ends when the timer hits 0
 
-### `npm run eject`
+### 📁 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Poll_Battle/
+├── client/         # React frontend
+│   └── src/
+├── server/         # WebSocket server
+│   └── index.js
+└── README.md
+📌 Tech Stack
+Frontend: React (Create React App)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Backend: Node.js, WebSocket (ws)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Real-time Communication: WebSocket protocol
