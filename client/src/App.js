@@ -49,7 +49,7 @@ function App() {
   return (
     <div className="container">
   <h1>Live Poll Battle</h1>
-  <div className="input-group">
+  <div className="short-input" >
     <label htmlFor="name">Your Name</label>
     <input
       type="text"
@@ -57,6 +57,7 @@ function App() {
       placeholder="Enter your name"
       value={name}
       onChange={(e) => setName(e.target.value)}
+      className="short-input"
     />
   </div>
   <div className="input-group">
@@ -69,7 +70,7 @@ function App() {
       onChange={(e) => setCustomQuestion(e.target.value)}
     />
   </div>
-  <div className="input-group">
+  <div className="short-input">
     <label htmlFor="optionA">Option A</label>
     <input
       type="text"
@@ -77,9 +78,10 @@ function App() {
       placeholder="Option A"
       value={optionA}
       onChange={(e) => setOptionA(e.target.value)}
+      className="short-input"
     />
   </div>
-  <div className="input-group">
+  <div className="short-input">
     <label htmlFor="optionB">Option B</label>
     <input
       type="text"
@@ -87,13 +89,14 @@ function App() {
       placeholder="Option B"
       value={optionB}
       onChange={(e) => setOptionB(e.target.value)}
+      className="short-input"
     />
   </div>
   <button onClick={handleCreateRoom} disabled={!name || !optionA || !optionB}>
     Create Room
   </button>
   <hr />
-  <div className="input-group">
+  <div className="short-input">
     <label htmlFor="roomId">Room ID</label>
     <input
       type="text"
