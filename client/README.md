@@ -26,7 +26,7 @@ npm install
 npm start
 Client runs at http://localhost:3000
 
-### ✨ Features
+✨ Features
 ✅ Create unique poll rooms with custom questions and options
 
 🧑‍🤝‍🧑 Real-time user join updates
@@ -56,7 +56,7 @@ Real-time synchronization across all clients
 
 Voting ends when the timer hits 0
 
-### 📁 Project Structure
+📁 Project Structure
 
 Poll_Battle/
 ├── client/         # React frontend
