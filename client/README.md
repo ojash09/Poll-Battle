@@ -5,7 +5,7 @@ Follow the steps below to clone and run the application on your local machine:
 ### 1. Clone the repository
 
 bash
-git clone https://github.com/AnkitS-21/Poll_Battle
+git clone https://github.com/ojash09/Poll_Battle
 cd Poll_Battle
 
 
