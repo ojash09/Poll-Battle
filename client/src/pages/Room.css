@@ -93,7 +93,7 @@ body {
 }
 
 .vote-button.disabled {
-  background-color: #94a3b8;
+  background-color: #d9dde3;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
@@ -102,16 +102,16 @@ body {
 .results-box {
   text-align: left;
   margin-top: 2rem;
-  background: #f8fafc;
+  background: #e4e7ea;
   padding: 1rem;
   border-radius: 12px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #406da7;
 }
 
 .result-line {
   display: flex;
   justify-content: space-between;
-  background: white;
+  background: rgb(172, 75, 75);
   padding: 0.75rem 1rem;
   border-radius: 8px;
   margin-bottom: 0.75rem;
